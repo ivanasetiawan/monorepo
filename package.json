@@ -1,0 +1,25 @@
+{
+  "name": "@venopi",
+  "version": "1.0.0",
+  "description": "Monorepo with NPM Workspaces",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm:dev:utils\" \"npm:dev:dashboard\" \"npm:dev:web3\"",
+    "dev:utils": "npm run dev -w @venopi/utils",
+    "dev:dashboard": "npm run dev -w @venopi/dashboard",
+    "dev:web3": "npm run dev -w @venopi/web3"
+},
+  "keywords": [],
+  "author": "Ivana Setiawan",
+  "license": "ISC",
+  "workspaces": [
+    "apps/*",
+    "libs/*"
+  ],
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^7.5.0"
+  }
+}
